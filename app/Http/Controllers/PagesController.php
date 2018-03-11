@@ -15,4 +15,13 @@ class PagesController extends Controller
 
         return view('users', compact('users'));
     }    
+
+    public function addUser()
+    {
+        $insertString = 'insert into users(name) values(\'' . request('name') . '\')';
+        DB::insert($insertString);
+        $users = DB::select('select name from users');
+
+        return view('users', compact('users'));
+    }  
 }

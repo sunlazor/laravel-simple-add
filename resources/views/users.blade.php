@@ -24,9 +24,10 @@
 
     <br>
 
-    <!-- <form method=POST action="/users">
-        <input name="name" placeholder="Tema" />
+    <form method="POST" action="/users">
+        {{ csrf_field() }}
+        <input type="text" name="name" placeholder="Tema" />
         <input type="submit" value="Add" />
-    </form> -->
+    </form>
 </body>
 </html>
